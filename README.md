@@ -1,8 +1,7 @@
 # Moive App
 
-## dotnation App
-
-### Seounee Love App
+## dotnation & seounee
 
 React App Movie
+
 
