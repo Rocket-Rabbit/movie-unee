@@ -1,40 +1,27 @@
 import React from 'react';
 
-function Food({name, picture}) {
-  return (
-  <div>
-    <h1>I like {name}</h1>
-    <img src={picture}/>
-  </div>
-  );
-}
-
-const foodlike = [
-  {
-    id: 1,
-    name: '타요',
-    image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.gC_DxaqbA_lVAq5tEnJqrQAAAA%26pid%3DApi&f=1'
-  },
-  {
-    id: 2,
-    name: '아파요',
-    image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.GqCfzS5q3Q-DtZ-x8xChVAHaHK%26pid%3DApi&f=1'
-  },
-  {
-    id: 3,
-    name: '맛있어',
-    image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.a6JGnjpJINxwp1XJ81EvLgAAAA%26pid%3DApi&f=1'
+class App extends React.Component {
+  state = {
+    count: 0,
   }
-];
 
-function App() {
-  return ( 
-    <div>
-      {foodlike.map(dish => (<Food key={dish.id} name={dish.name} picture={dish.image} />))}
-    </div>
-    // foodlike 배열의 요소를 dish에 담는다
-    // 여기서 요소는 객체.
-  );
+  add = (e) => {
+    console.log('add');
+  }
+
+  minus = () => {
+    console.log('minus');
+  }
+  
+  render() {
+    return(
+      <>
+        <h1>안녕하세요 {this.state.count}</h1>
+        <button onClick={this.add}>ADD</button>
+        <button onClick={this.minus}>MINUS</button>
+      </>
+    );
+  }
 }
 
 export default App;
