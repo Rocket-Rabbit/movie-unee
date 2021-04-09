@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Movie from './Movie';
+import "./App.css";
 
 // https://yts-proxy.now.sh/list_movies.json
 
@@ -29,17 +30,37 @@ class App extends React.Component {
   
   render() {
     const { isLoading, movies } = this.state;
-    // state 객체의 'isLoading value'를 상응하는 'isLoading'변수에 대입한다.
-    // 구조분해할당.
+    /**
+     * 구조분해할당
+     * state 객체의 'isLoading value'를 상응하는 'isLoading'변수에 대입한다. 
+     * movies에는 배열이 대입되고 아래에 map()함수로 처리된다.
+     */
     return(
-        <div>
+        <section className="container">
           { isLoading 
-            ? 'Loading...' 
-            : movies.map((movie) => {
-              console.log(movie);
-              return <Movie />;
-            })}
-        </div>
+            ? (
+              <div className="loader">
+                <span className="loader_text">Loading</span>
+              </div>
+            ) : (
+          // console.log(movie);
+          // movies에는 api로 불러온 movies배열
+          // import된 Movie로 값을 넘겨주고 컴포넌트 반환 
+              <div className="movies">
+              { movies.map(movie => (
+                <Movie
+                  key={movie.id}
+                  //id={movie.id}
+                  year={movie.year}
+                  title={movie.title}
+                  summary={movie.summary}
+                  poster={movie.medium_cover_image}
+                  genres={movie.genres}
+                />
+              )) }
+            </div>
+            )}
+        </section>
     );
   }
 }
