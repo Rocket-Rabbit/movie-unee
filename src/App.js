@@ -1,19 +1,21 @@
 import React from 'react';
 import "./App.css";
-import {HashRouter, Route} from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import About from './routes/About';
 import Home from './routes/Home';
+import Navigation from './components/Navigation';
 
 // https://yts-proxy.now.sh/list_movies.json
 
-function App() {  
+function App() {   
   return (
     <HashRouter>
-      <Route path="/" component={Home}/>
+      <Navigation />
+      <Route path="/" exact={true} component={Home}/>
       <Route path="/about" component={About}/>
     </HashRouter>
     /**
-     *  "/about" Path Props, {About} import Component 
+     *  "/about": Path Props, {About}: import Component 
      */
   );
 }
