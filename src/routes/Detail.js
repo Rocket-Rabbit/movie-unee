@@ -21,6 +21,7 @@ class Detail extends React.Component {
   render() {
     const { location } = this.props;
     if (location.state) {
+      // 새로고침으로 인해 state에 값이 없을때...
     return (
       <div>{location.state.title}</div>
     );} else {
