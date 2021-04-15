@@ -5,7 +5,7 @@ function About() {
   return (
     <div className="about__container">
       <p>하이 도트니!</p>
-      <p>하이 서유니! 서유니는 도트니와 싸워요. </p>
+      <p>게임 좀 그만해. 게임 금지야.</p>
     </div>
   );
 }
