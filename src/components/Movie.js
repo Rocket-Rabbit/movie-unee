@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import "./Movie.css";
 import { Link } from 'react-router-dom';
 
-function Movie({ title, year, summary, poster, genres }) {
+function Movie({ title, year, summary, poster, genres, posterLg }) {
   return (
     <div className="movie">
-      <Link to={{ pathname: '/movie-detail', state: { title, year, summary, poster, genres } }}>
+      <Link to={{ pathname: '/movie-detail', state: { title, year, summary, poster, posterLg, genres } }}>
       {/* state:에 파라미터를 받는다 */}
       <img src={poster} alt={title} />
       <div className="movie_data">
@@ -16,6 +16,7 @@ function Movie({ title, year, summary, poster, genres }) {
           {genres.map((genre, index) => {
             return (
               <li key={index} className="movie_genre">{genre}</li>
+              // map을 통해 반복되는 콤포넌트는 반드시 고유의 key 가 있어야 한다.
             );
           })}
         </ul>
