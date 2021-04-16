@@ -58,6 +58,7 @@ class Home extends React.Component {
                   poster={movie.medium_cover_image}
                   posterLg={movie.large_cover_image}
                   genres={movie.genres}//장르(배열)
+                  back={movie.background_image}
                 />
               )) }
             </div>

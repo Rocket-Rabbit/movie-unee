@@ -4,8 +4,8 @@ import "./Detail.css";
 class Detail extends React.Component {
    constructor(props) {
     super(props);
-    console.log(this.props);
-  } 
+    //console.log(this.props);
+  }
   /*
   props는 Link 에서 보내는 props.
   */
@@ -16,7 +16,8 @@ class Detail extends React.Component {
       history.push('/');
       // location 객체 전체 ...
       // history 객체 전체 ...
-    }
+    };
+
   }
 
   render() {
@@ -37,6 +38,8 @@ class Detail extends React.Component {
           })}
         </div>
         <p className="movie-summary">{location.state.summary.slice(0, 300)}...</p>
+        <div className="movie-back"><img src={location.state.back}/></div>
+        <button className="go-home" onClick={() => {this.props.history.push("/")}}>Back</button>
       </div>
     );} else {
       return null;

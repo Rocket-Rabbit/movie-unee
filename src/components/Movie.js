@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import "./Movie.css";
 import { Link } from 'react-router-dom';
 
-function Movie({ title, year, summary, poster, genres, posterLg }) {
+function Movie({ title, year, summary, poster, genres, posterLg, back }) {
   return (
     <div className="movie">
-      <Link to={{ pathname: '/movie-detail', state: { title, year, summary, poster, posterLg, genres } }}>
+      <Link to={{ pathname: '/movie-detail', state: { title, year, summary, poster, posterLg, genres, back } }}>
       {/* state:에 파라미터를 받는다 */}
       <img src={poster} alt={title} />
       <div className="movie_data">
